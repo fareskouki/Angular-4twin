@@ -1,0 +1,40 @@
+<p>list-user works!</p>
+<input type="text" [(ngModel)]="search">
+<h1> liste utilisateur </h1>
+<table border="2px" class="table">
+    <tr>
+        <td>Id User </td>
+        <td>First Name </td>
+        <td>Last Name </td>
+        <td> action </td>
+    </tr>
+    <tr *ngFor="let user of liste;let i = index">
+        <div *ngIf="search==user.firstName ||search==''">
+            <td>{{user.idCustomer}} </td>
+            <!--
+        <td *ngIf="user.firstName==='George'" [style.backgroundColor]="'red'">{{user.firstName}}</td>
+        <td *ngIf="user.firstName!='George'" [style.backgroundColor]="'green'">{{user.firstName}}</td>
+       -->
+            <td [ngStyle]="{'backgroundColor':user.firstName=='George'?'red':'green'}">{{user.firstName}}</td>
+
+            <td>{{user.lastName}}</td>
+            <!--
+        <td *ngIf="user.accountCategory=='Admin'"><input type="submit" value="delete" 
+            (click)="DeleteUserV2(i)" [disabled]="true"></td>
+            <td *ngIf="user.accountCategory!='Admin'"><input type="submit" value="delete" 
+                (click)="DeleteUserV2(i)" [disabled]="false"></td>
+                -->
+
+            <td><input type="submit" value="delete" (click)="DeleteUserV2(i)"
+                    [disabled]="user.accountCategory=='Admin'"></td>
+
+            <td><a [routerLink]="['/user/detail/',user.firstName]">detail</a></td>
+            <td><button (click)="goToComopnent(i)"> Details</button></td>
+            <div *ngIf="show && i == j">
+                {{user.email}}
+            </div>
+
+        </div>
+    </tr>
+
+</table>

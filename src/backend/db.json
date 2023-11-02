@@ -1,0 +1,30 @@
+{
+  "users": [
+    {
+      "id": 2,
+      "name": "json-server",
+      "surname": "typicode",
+      "adresse": "binzart",
+      "age": "33"
+    }
+  ],
+  "products": [
+    {
+      "id": 3,
+      "code": "TV_69",
+      "libelle": "TV",
+      "prix_unitaire": 700,
+      "taux_tva": 0.15
+    },
+    {
+      "id": 4
+    },
+    {
+      "id": 5
+    },
+    {
+      "code": "d",
+      "id": 6
+    }
+  ]
+}

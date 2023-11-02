@@ -1,0 +1,7 @@
+<div *ngFor="let u of users ">
+  <div *ngIf="u.firstName==search || search=='' ">  
+{{u.idCustomer}}
+{{u.firstName}}
+</div>
+</div>
+<input type="text" [(ngModel)]="search">

@@ -1,0 +1,12 @@
+<p>first works!</p>
+<h1>bonjour {{klass}} </h1>
+<input type="submit" (click)="sayHello()" value="save">
+<div [style.backgroundColor]="kolor"> test</div>
+<input type="submit" (click)="changeColor()" value="change color">
+<input type="text" [(ngModel)]="kolor">
+<hr>
+<input type="text" #t>
+<input type="submit" (click)="changeColor2(t.value)" value="change color">
+
+<input type="text" appBackgroundColorChange>
+<div appBackgroundColorChange>directive</div>

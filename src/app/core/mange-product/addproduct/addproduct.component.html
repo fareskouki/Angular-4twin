@@ -1,0 +1,26 @@
+
+<form #form="ngForm">
+    <label>code</label>
+    <input type="text" name="code" [(ngModel)]="product.code" required minlength="3" #code="ngModel">
+    <span *ngIf="code.invalid && code.touched">
+<span *ngIf="code.errors?.['required']">
+    required
+</span>
+<span *ngIf="code.errors?.['minlength']">
+    minlength
+</span>
+    </span>
+    <label>libelle</label>
+    <input type="text" name="libelle" [(ngModel)]="product.libelle">
+    <label>taux_tva</label>
+    <input type="text" name="adress" [(ngModel)]="product.taux_tva">
+    <label>prix_unitaire</label>
+            <input type="text" name="prix_unitaire" [(ngModel)]="product.prix_unitaire" pattern="[0-9]*" #prix_unitaire="ngModel">
+    <span *ngIf="prix_unitaire.invalid ">
+        <span *ngIf="prix_unitaire.errors?.['pattern']">
+            pattern
+        </span>
+       
+        </span>
+    <input type="submit" value="add product" (click)="saveProduct(form.value)" >
+</form>

@@ -1,0 +1,21 @@
+<p>add-user works!</p>
+<form #form=""ngForm>
+<label>name</label>
+<input type="text" name="name"[(ngModel)]="user.name" required minlength="3" #nameuser="ngModel"><!--pour afficher un message pour chaque model-->
+<span *ngIf="nameuser.invalid">
+<span *ngIf="nameuser.errors?.['required']"></span><!--ki nda5l 7arf required ma3dch tafichi cil errors donc t3ada-->
+<span  *ngIf="nameuser.errors?.['minlength']"></span>
+</span>
+<label>username</label>
+<input type="text" name="username"[(ngModel)]="user.username">
+<label>adresse</label>
+<label>age</label>
+<input type="text" name="age" [(ngModel)]="user.age" pattern="[0-9]*" #age="ngModel">
+<span *ngIf="age.invalid ">
+<span *ngIf="age.errors?.['pattern']">
+pattern
+</span>
+
+</span>
+<input type="submit" value="add user" (click)="showForm(form['value'])" > <!--[disabled]="form.invalide-->
+</form>
